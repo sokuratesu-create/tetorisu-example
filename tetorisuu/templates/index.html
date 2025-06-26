@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Tetris</title>
+
+    {# 自動落下用のリフレッシュ meta #}
+    {% if auto_fall %}
+        <meta http-equiv="refresh" content="0.5; url=/step">
+    {% endif %}
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Tetris（テトリス）</h1>
+
+    {# ゲームオーバー時のメッセージ #}
+    {% if game_over %}
+        <h2 style="color: red;">Game Over</h2>
+    {% endif %}
+
+    <div class="board">
+        {% for row in board %}
+            {% for cell in row %}
+                <div class="cell {{ cell }}"></div>
+            {% endfor %}
+        {% endfor %}
+    </div>
+
+    <form action="/move" method="post">
+        <button name="direction" value="left">← 左</button>
+        <button name="direction" value="right">→ 右</button>
+        <button name="direction" value="rotate">↻ 回転</button>
+    </form>
+</body>
+</html>

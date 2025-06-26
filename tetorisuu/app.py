@@ -131,6 +131,10 @@ def clear_lines():
 
 @app.route("/")
 def index():
+    global current_mino
+    if current_mino is None:
+        spawn_random_mino()
+
     display_board = [row[:] for row in board]
     if not game_over:
         display_board = place_mino(display_board, current_mino["shape"], current_mino["color"], current_offset)
