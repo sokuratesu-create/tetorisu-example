@@ -1,0 +1,70 @@
+body {
+    font-family: sans-serif;
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(12, 24px); /* 横12マス */
+    grid-template-rows: repeat(22, 24px);    /* 縦22マス */
+    gap: 1px;
+    margin: auto;
+    background-color: #444;
+}
+
+.cell {
+    width: 24px;
+    height: 24px;
+    box-sizing: border-box;
+}
+
+.wall {
+    background-color: #888;
+}
+
+.empty {
+    background-color: #111;
+}
+
+.mino{
+    background-color: cyan;
+}
+
+.cyan {
+    background-color: cyan;
+}
+.yellow {
+    background-color: yellow;
+}
+.purple {
+    background-color: purple;
+}
+.green {
+    background-color: limegreen;
+}
+.red {
+    background-color: red;
+}
+.blue {
+    background-color: blue;
+}
+.orange {
+    background-color: orange;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #555;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #777;
+}
